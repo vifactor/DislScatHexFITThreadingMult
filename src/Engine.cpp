@@ -351,6 +351,8 @@ void Engine::setupCalculator(size_t id)
 	 * like [224] and [-2-24]
 	*/
 	Q[0] *= GSL_SIGN (Q_vec[0]);
+	
+	//std::cout << "Q:\t" << Q << std::endl;
     
 	try
 	{
@@ -371,6 +373,9 @@ void Engine::setupCalculator(size_t id)
         {
             b_vec = transformator.toVector3d(th_dislocations[i].b);
             b = toThreadingFrame(b_vec, n_vec);
+            //std::cout << "b_vec:\t" << b_vec << std::endl;
+            //std::cout << "b:\t" << b << std::endl;
+            
             m_calculators.back()->getSample()->addThreadingLayer(
                 th_dislocations[i].rho * 1e-14,
                 b(0), b(2),

@@ -12,6 +12,7 @@
 #include "PortFitter.h"
 #include "ProgramSettings.h"
 #include "DataReader.h"
+#include <boost/numeric/ublas/io.hpp>
 
 //include <fstream>
 

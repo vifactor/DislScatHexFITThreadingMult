@@ -53,7 +53,6 @@ void DataReader::parse(const std::string& filename)
 		    //distribute everything by columns
             for(size_t i = 0; i < values.size(); ++i)
             {
-                std::cout << "_" << values[i] << "_" << std::endl;
                 m_data[m_columnNames[i]].push_back(
                         boost::lexical_cast<double>(values[i]));
             }

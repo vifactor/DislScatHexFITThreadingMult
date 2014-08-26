@@ -102,6 +102,7 @@ ProgramSettings::SampleConfig::set(const libconfig::Setting& sample,
 {
 	/*lattice parameters*/
 	a0 = sample["a0"];
+	c0 = sample["c0"];
 	/*Poisson ratio*/
 	nu = sample["nu"];
 	/*Sample dimensions*/
