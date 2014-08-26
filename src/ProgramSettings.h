@@ -10,7 +10,7 @@
 #define PROGRAMSETTINGS_H_
 
 #include "NonlinearFit.h"
-#include <MillerIndexCub.h>
+#include <MillerIndexHex.h>
 #include <libconfig.h++>
 #include <boost/filesystem.hpp>
 #include <boost/lexical_cast.hpp>
@@ -43,7 +43,7 @@ public:
 
 	struct DataConfig
 	{
-        MillerReciprocalCubIndices Q;
+        MillerReciprocalHexIndices Q;
         double resolX, resolZ;
         boost::filesystem::path file;
         double Ibg, I0;
@@ -70,11 +70,11 @@ public:
 		double thickness;
 		double width;
 		/*cubic lattice parameters*/
-		double a0;
+		double a0, c0;
 
 		struct ThreadingDislocationType
 		{
-			MillerDirectCubIndices b;
+			MillerDirectHexIndices b;
 			/*dislocation density*/
 			double rho;
 			/*correlation radius*/

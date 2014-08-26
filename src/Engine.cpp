@@ -336,8 +336,9 @@ void Engine::setupCalculator(size_t id)
 {
     Vector3d Q_vec, Q;
 	Vector3d b_vec, l_vec, n_vec, b;
-	MillerCubIndicesTransformator transformator(
-	                                m_programSettings->getSampleConfig().a0);
+	MillerHexIndicesTransformator transformator(
+	                                m_programSettings->getSampleConfig().a0,
+	                                m_programSettings->getSampleConfig().c0);
 	double phi;
 	
 	n_vec = Vector3d(0, 0, 1);

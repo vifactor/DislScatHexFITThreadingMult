@@ -15,11 +15,12 @@ ProgramSettings::DataConfig::set(const libconfig::Setting& data,
                                 CalculatorParameterMap& cmap) 
 {
     if(data["Q"].isArray() && data["Q"].getLength() 
-	                                               == MillerCubIndicesDimension)
+	                                               == MillerHexIndicesDimension)
 	{
 		Q.H = data["Q"][0];
 		Q.K = data["Q"][1];
-		Q.L = data["Q"][2];
+		Q.I = data["Q"][2];
+		Q.L = data["Q"][3];
 	}
 	else
 	{
@@ -125,11 +126,12 @@ ProgramSettings::SampleConfig::set(const libconfig::Setting& sample,
             cmap[layer["rc"].getPath()] = threading[i].rc;
 		    /*burgers vector*/
 	        if(layer["b"].isArray() && layer["b"].getLength()
-	                                             == MillerCubIndicesDimension)
+	                                             == MillerHexIndicesDimension)
 	        {
 		        threading[i].b.X = layer["b"][0];
 		        threading[i].b.Y = layer["b"][1];
-		        threading[i].b.Z = layer["b"][2];
+		        threading[i].b.T = layer["b"][2];
+		        threading[i].b.Z = layer["b"][3];
 		    }
 		    else
 		        throw ProgramSettings::Exception(
@@ -142,8 +144,9 @@ std::ostream&
 operator<<(std::ostream& out, const ProgramSettings::SampleConfig &sample)
 {
     out << "--- Sample settings ---" << std::endl;
-	out << "\tLattice parameters (a0):\t" << sample.a0 << std::endl;
-	out << "\tSample dimensions (thickness width):\t" 
+	out << "\tLattice parameters (a0, c0):\t" << sample.a0 
+	                                       << "," << sample.c0 << std::endl;
+	out << "\tSample dimensions (thickness, width):\t" 
             << sample.thickness << "\t"
 			<< sample.width << std::endl;
 	out << "\tPoisson ratio:\t" << sample.nu << std::endl;
