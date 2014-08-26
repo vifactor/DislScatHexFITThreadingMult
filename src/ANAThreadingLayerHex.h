@@ -1,21 +1,21 @@
 /*
- * ANAThreadingLayerCub.h
+ * ANAThreadingLayerHex.h
  *
- *  Created on: 11 черв. 2013
+ *  Created on: 26 aug. 2014
  *      Author: kopp
  */
 
-#ifndef ANATHREADINGLAYERCUB_H_
-#define ANATHREADINGLAYERCUB_H_
+#ifndef ANATHREADINGLAYERHEX_H_
+#define ANATHREADINGLAYERHEX_H_
 
 #include <gsl/gsl_math.h>
 #include <iostream>
 
-class ANAThreadingLayerCub
+class ANAThreadingLayerHex
 {
 public:
-	ANAThreadingLayerCub(double rho, double b_edge, double b_screw, double rc, double Qx, double Qz, double nu);
-	virtual ~ANAThreadingLayerCub();
+	ANAThreadingLayerHex(double rho, double b_edge, double b_screw, double rc, double Qx, double Qz, double nu);
+	virtual ~ANAThreadingLayerHex();
 
 	double T(double r, double phi) const;
 	double m_rho;
@@ -32,4 +32,4 @@ protected:
 	inline double chi_edge(double phi) const;
 };
 
-#endif /* ANAThreadingLayerCub_H_ */
+#endif /* ANAThreadingLayerHex_H_ */

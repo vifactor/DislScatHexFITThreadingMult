@@ -74,7 +74,7 @@ ANACalculatorSkewDouble::~ANACalculatorSkewDouble()
 		gsl_integration_workspace_free(m_cyclic_workspace);
 }
 
-void ANACalculatorSkewDouble::setSample(ANASampleCub * sample)
+void ANACalculatorSkewDouble::setSample(ANASampleHex * sample)
 {
     m_sample = sample;
 }

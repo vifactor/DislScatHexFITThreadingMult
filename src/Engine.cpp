@@ -355,7 +355,7 @@ void Engine::setupCalculator(size_t id)
 	{
 	    m_calculators.push_back(new ANACalculatorSkewDouble(
 	            Q[0], Q[2]));
-        m_calculators.back()->setSample(new ANASampleCub(
+        m_calculators.back()->setSample(new ANASampleHex(
                 m_programSettings->getSampleConfig().thickness,
                 m_programSettings->getSampleConfig().width));
         

@@ -1,21 +1,21 @@
 /*
- * ANASampleCub.h
+ * ANASampleHex.h
  *
  *  Created on: 12 july 2014
  *      Author: kopp
  */
 
-#ifndef ANASAMPLECUB_H_
-#define ANASAMPLECUB_H_
+#ifndef ANASAMPLEHEX_H_
+#define ANASAMPLEHEX_H_
 
-#include "ANAThreadingLayerCub.h"
+#include "ANAThreadingLayerHex.h"
 #include <vector>
 
-class ANASampleCub
+class ANASampleHex
 {
 public:
-	ANASampleCub(double thickness, double size);
-	~ANASampleCub();
+	ANASampleHex(double thickness, double size);
+	~ANASampleHex();
 
 	void addThreadingLayer(double rho, double b_edge, double b_screw, double rc,
 			double Qx, double Qz, double nu);
@@ -26,7 +26,7 @@ public:
 	double m_thickness;
 	double m_size;
 protected:
-	std::vector<ANAThreadingLayerCub * > m_layers;
+	std::vector<ANAThreadingLayerHex * > m_layers;
 };
 
-#endif /* ANASampleCub_H_ */
+#endif /* ANASampleHex_H_ */

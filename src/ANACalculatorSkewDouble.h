@@ -8,7 +8,7 @@
 #ifndef ANACALCULATORSKEWDOUBLE_H_
 #define ANACALCULATORSKEWDOUBLE_H_
 
-#include "ANASampleCub.h"
+#include "ANASampleHex.h"
 #include <gsl/gsl_integration.h>
 #include <gsl/gsl_spline.h>
 #include <gsl/gsl_sf_trig.h>
@@ -24,14 +24,14 @@ public:
 	virtual ~ANACalculatorSkewDouble();
 
 	virtual void setResolution(double fwhm_qx, double fwhm_qz);
-	virtual void setSample(ANASampleCub * );
-	ANASampleCub * getSample() {return m_sample;}
+	virtual void setSample(ANASampleHex * );
+	ANASampleHex * getSample() {return m_sample;}
 	virtual double I(const double omega) const;
 	virtual double I(const double omega, double & error) const;
 	
 	friend double ana_skew_double_integrand(double x, void *params);
 protected:
-    ANASampleCub * m_sample;
+    ANASampleHex * m_sample;
 
     double m_alpha, m_angcoef;
 	double m_resol2_x, m_resol2_z;
